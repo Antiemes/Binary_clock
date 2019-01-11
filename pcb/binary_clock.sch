@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.6.0">
+<eagle version="7.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -9,6 +9,20 @@
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
+<layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
+<layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
+<layer number="6" name="Route6" color="1" fill="8" visible="no" active="no"/>
+<layer number="7" name="Route7" color="4" fill="8" visible="no" active="no"/>
+<layer number="8" name="Route8" color="1" fill="2" visible="no" active="no"/>
+<layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
+<layer number="10" name="Route10" color="1" fill="7" visible="no" active="no"/>
+<layer number="11" name="Route11" color="4" fill="7" visible="no" active="no"/>
+<layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
+<layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
@@ -6857,6 +6871,264 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="SparkFun-Clocks">
+<description>&lt;h3&gt;SparkFun Clocks, Oscillators and Resonators&lt;/h3&gt;
+This library contains the real-time clocks, oscillators, resonators, and crystals we use. 
+&lt;br&gt;
+&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+&lt;br&gt;
+&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
+&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;
+&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="OSCILLATOR-SMD-7X5-4PAD">
+<description>&lt;h3&gt;7x5mm, 4-Pin Oscillator (Polarized)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="http://www.farnell.com/datasheets/21116.pdf"&gt;Example Datasheet&lt;/a&gt;&lt;/p&gt;</description>
+<smd name="1" x="-2.54" y="-2.0955" dx="2" dy="1.8" layer="1" rot="R90"/>
+<smd name="2" x="2.54" y="-2.0955" dx="2" dy="1.8" layer="1" rot="R90"/>
+<smd name="3" x="2.54" y="2.1045" dx="2" dy="1.8" layer="1" rot="R90"/>
+<smd name="4" x="-2.54" y="2.1045" dx="2" dy="1.8" layer="1" rot="R90"/>
+<text x="0.046" y="2.9925" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;Name</text>
+<text x="0" y="-2.9655" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;Value</text>
+<circle x="-4.138" y="-2.6049" radius="0.3" width="0" layer="21"/>
+<wire x1="-3.6" y1="-2.6" x2="3.6" y2="-2.6" width="0.127" layer="51"/>
+<wire x1="3.6" y1="-2.6" x2="3.6" y2="2.6" width="0.127" layer="51"/>
+<wire x1="-3.6" y1="2.6" x2="-3.6" y2="-2.6" width="0.127" layer="51"/>
+<wire x1="-3.7" y1="2.7" x2="-3.7" y2="-2.7" width="0.2032" layer="21"/>
+<wire x1="3.6" y1="2.6" x2="-3.6" y2="2.6" width="0.127" layer="51"/>
+<wire x1="3.7" y1="-2.7" x2="3.7" y2="2.7" width="0.2032" layer="21"/>
+<wire x1="-1.4" y1="-2.7" x2="1.4" y2="-2.7" width="0.2032" layer="21"/>
+<wire x1="1.4" y1="2.7" x2="-1.4" y2="2.7" width="0.2032" layer="21"/>
+<polygon width="0.127" layer="51">
+<vertex x="-3.5" y="2.6"/>
+<vertex x="-2.1" y="2.6"/>
+<vertex x="-2.1" y="1.3"/>
+<vertex x="-3.5" y="1.3"/>
+</polygon>
+<polygon width="0.127" layer="51">
+<vertex x="3.5" y="-2.6"/>
+<vertex x="2.1" y="-2.6"/>
+<vertex x="2.1" y="-1.3"/>
+<vertex x="3.5" y="-1.3"/>
+</polygon>
+<polygon width="0.127" layer="51">
+<vertex x="-3.5" y="-2.6"/>
+<vertex x="-2.1" y="-2.6"/>
+<vertex x="-2.1" y="-1.3"/>
+<vertex x="-3.5" y="-1.3"/>
+</polygon>
+<polygon width="0.127" layer="51">
+<vertex x="3.5" y="2.6"/>
+<vertex x="2.1" y="2.6"/>
+<vertex x="2.1" y="1.3"/>
+<vertex x="3.5" y="1.3"/>
+</polygon>
+</package>
+<package name="OSCILLATOR-SMD-7.5X5.2-6PIN">
+<description>&lt;h3&gt;7x5mm, 6-Pin FXO-HC73 Oscillator (Polarized)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="http://www.foxonline.com/pdfs/FXO_HC73.pdf"&gt;Example Datasheet&lt;/a&gt;&lt;/p&gt;</description>
+<wire x1="3.75" y1="2.6" x2="-3.75" y2="2.6" width="0.127" layer="51"/>
+<wire x1="-3.85" y1="2.7" x2="-3.85" y2="-2.7" width="0.2032" layer="21"/>
+<wire x1="-3.75" y1="-2.6" x2="3.75" y2="-2.6" width="0.127" layer="51"/>
+<wire x1="3.75" y1="-2.6" x2="3.75" y2="2.6" width="0.127" layer="51"/>
+<circle x="-4.131" y="-2.981" radius="0.3605" width="0" layer="21"/>
+<smd name="2" x="2.54" y="-2.1" dx="2" dy="1.8" layer="1" rot="R90"/>
+<smd name="3" x="2.54" y="2.1" dx="2" dy="1.8" layer="1" rot="R90"/>
+<smd name="4" x="-2.54" y="2.1" dx="2" dy="1.8" layer="1" rot="R90"/>
+<smd name="1" x="-2.54" y="-2.1" dx="2" dy="1.8" layer="1" rot="R90"/>
+<smd name="NC0" x="0" y="-2.1" dx="2" dy="1.4" layer="1" rot="R90"/>
+<smd name="NC1" x="0" y="2.1" dx="2" dy="1.4" layer="1" rot="R90"/>
+<text x="0" y="3.302" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-3.302" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<wire x1="-3.75" y1="2.6" x2="-3.75" y2="-2.6" width="0.127" layer="51"/>
+<wire x1="3.85" y1="-2.7" x2="3.85" y2="2.7" width="0.2032" layer="21"/>
+<wire x1="-3.85" y1="-2.7" x2="-3.65" y2="-2.7" width="0.2032" layer="21"/>
+<wire x1="-1.4" y1="-2.7" x2="-0.95" y2="-2.7" width="0.2032" layer="21"/>
+<wire x1="0.95" y1="-2.7" x2="1.4" y2="-2.7" width="0.2032" layer="21"/>
+<wire x1="3.65" y1="-2.7" x2="3.85" y2="-2.7" width="0.2032" layer="21"/>
+<wire x1="-1.4" y1="2.7" x2="-0.95" y2="2.7" width="0.2032" layer="21"/>
+<wire x1="0.95" y1="2.7" x2="1.4" y2="2.7" width="0.2032" layer="21"/>
+<wire x1="3.65" y1="2.7" x2="3.85" y2="2.7" width="0.2032" layer="21"/>
+<wire x1="-3.85" y1="2.7" x2="-3.65" y2="2.7" width="0.2032" layer="21"/>
+<polygon width="0.127" layer="51">
+<vertex x="-3.24" y="2.6"/>
+<vertex x="-3.00661875" y="2.6" curve="-90"/>
+<vertex x="-2.89" y="2.48338125"/>
+<vertex x="-2.89" y="2.35518125" curve="90"/>
+<vertex x="-2.68481875" y="2.15"/>
+<vertex x="-2.378678125" y="2.15" curve="90"/>
+<vertex x="-2.19" y="2.338678125"/>
+<vertex x="-2.19" y="2.492296875" curve="-90"/>
+<vertex x="-2.082296875" y="2.6"/>
+<vertex x="-1.84" y="2.6"/>
+<vertex x="-1.84" y="1.3"/>
+<vertex x="-3.24" y="1.3"/>
+</polygon>
+<polygon width="0.127" layer="51">
+<vertex x="-0.7" y="2.6"/>
+<vertex x="-0.46661875" y="2.6" curve="-90"/>
+<vertex x="-0.35" y="2.48338125"/>
+<vertex x="-0.35" y="2.35518125" curve="90"/>
+<vertex x="-0.14481875" y="2.15"/>
+<vertex x="0.161321875" y="2.15" curve="90"/>
+<vertex x="0.35" y="2.338678125"/>
+<vertex x="0.35" y="2.492296875" curve="-90"/>
+<vertex x="0.457703125" y="2.6"/>
+<vertex x="0.7" y="2.6"/>
+<vertex x="0.7" y="1.3"/>
+<vertex x="-0.7" y="1.3"/>
+</polygon>
+<polygon width="0.127" layer="51">
+<vertex x="1.84" y="2.6"/>
+<vertex x="2.07338125" y="2.6" curve="-90"/>
+<vertex x="2.19" y="2.48338125"/>
+<vertex x="2.19" y="2.35518125" curve="90"/>
+<vertex x="2.39518125" y="2.15"/>
+<vertex x="2.701321875" y="2.15" curve="90"/>
+<vertex x="2.89" y="2.338678125"/>
+<vertex x="2.89" y="2.492296875" curve="-90"/>
+<vertex x="2.997703125" y="2.6"/>
+<vertex x="3.24" y="2.6"/>
+<vertex x="3.24" y="1.3"/>
+<vertex x="1.84" y="1.3"/>
+</polygon>
+<polygon width="0.127" layer="51">
+<vertex x="3.24" y="-2.6"/>
+<vertex x="3.00661875" y="-2.6" curve="-90"/>
+<vertex x="2.89" y="-2.48338125"/>
+<vertex x="2.89" y="-2.35518125" curve="90"/>
+<vertex x="2.68481875" y="-2.15"/>
+<vertex x="2.378678125" y="-2.15" curve="90"/>
+<vertex x="2.19" y="-2.338678125"/>
+<vertex x="2.19" y="-2.492296875" curve="-90"/>
+<vertex x="2.082296875" y="-2.6"/>
+<vertex x="1.84" y="-2.6"/>
+<vertex x="1.84" y="-1.3"/>
+<vertex x="3.24" y="-1.3"/>
+</polygon>
+<polygon width="0.127" layer="51">
+<vertex x="0.7" y="-2.6"/>
+<vertex x="0.46661875" y="-2.6" curve="-90"/>
+<vertex x="0.35" y="-2.48338125"/>
+<vertex x="0.35" y="-2.35518125" curve="90"/>
+<vertex x="0.14481875" y="-2.15"/>
+<vertex x="-0.161321875" y="-2.15" curve="90"/>
+<vertex x="-0.35" y="-2.338678125"/>
+<vertex x="-0.35" y="-2.492296875" curve="-90"/>
+<vertex x="-0.457703125" y="-2.6"/>
+<vertex x="-0.7" y="-2.6"/>
+<vertex x="-0.7" y="-1.3"/>
+<vertex x="0.7" y="-1.3"/>
+</polygon>
+<polygon width="0.127" layer="51">
+<vertex x="-1.84" y="-2.6"/>
+<vertex x="-2.07338125" y="-2.6" curve="-90"/>
+<vertex x="-2.19" y="-2.48338125"/>
+<vertex x="-2.19" y="-2.35518125" curve="90"/>
+<vertex x="-2.39518125" y="-2.15"/>
+<vertex x="-2.701321875" y="-2.15" curve="90"/>
+<vertex x="-2.89" y="-2.338678125"/>
+<vertex x="-2.89" y="-2.492296875" curve="-90"/>
+<vertex x="-2.997703125" y="-2.6"/>
+<vertex x="-3.24" y="-2.6"/>
+<vertex x="-3.24" y="-1.3"/>
+<vertex x="-1.84" y="-1.3"/>
+</polygon>
+</package>
+<package name="OSCILLATOR-SMD-5X3.2">
+<description>&lt;h3&gt;5.0x3.2 mm 4-SMD Oscillator (Polarized)&lt;/h3&gt;
+&lt;p&gt;&lt;b&gt;Size&lt;/b&gt;: 0.197" x 0.126" (5.00mm x 3.20mm)&lt;br&gt;
+&lt;b&gt;Height&lt;/b&gt;: 0.051" (1.30mm)&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.ctscorp.com/wp-content/uploads/2015/11/008-0250-0.pdf"&gt;Example Datasheet&lt;/a&gt;&lt;/p&gt;</description>
+<circle x="-2.827" y="-1.927" radius="0.254" width="0" layer="21"/>
+<smd name="1" x="-1.27" y="-1.1" dx="1.397" dy="1.1938" layer="1"/>
+<smd name="2" x="1.27" y="-1.1" dx="1.397" dy="1.1938" layer="1"/>
+<smd name="3" x="1.27" y="1.1" dx="1.397" dy="1.1938" layer="1"/>
+<smd name="4" x="-1.27" y="1.1" dx="1.397" dy="1.1938" layer="1"/>
+<text x="0" y="2.032" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-2.032" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<wire x1="-2.5" y1="1.6" x2="-2.5" y2="-1.6" width="0.127" layer="51"/>
+<wire x1="-2.5" y1="-1.6" x2="2.5" y2="-1.6" width="0.127" layer="51"/>
+<wire x1="2.5" y1="-1.6" x2="2.5" y2="1.6" width="0.127" layer="51"/>
+<wire x1="2.5" y1="1.6" x2="-2.5" y2="1.6" width="0.127" layer="51"/>
+<wire x1="-2.573" y1="1.673" x2="-2.573" y2="-1.673" width="0.2032" layer="21"/>
+<wire x1="2.573" y1="-1.673" x2="2.573" y2="1.673" width="0.2032" layer="21"/>
+<wire x1="-2.573" y1="-1.673" x2="-2.2" y2="-1.673" width="0.2032" layer="21"/>
+<wire x1="2.573" y1="1.673" x2="2.2" y2="1.673" width="0.2032" layer="21"/>
+<wire x1="-2.573" y1="1.673" x2="-2.2" y2="1.673" width="0.2032" layer="21"/>
+<wire x1="2.573" y1="-1.673" x2="2.2" y2="-1.673" width="0.2032" layer="21"/>
+<wire x1="-0.3" y1="-1.8" x2="0.3" y2="-1.8" width="0.2032" layer="21"/>
+<wire x1="0.3" y1="1.8" x2="-0.3" y2="1.8" width="0.2032" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="OSCILLATOR">
+<description>&lt;h3&gt;Active Oscillator w/ Enable Input&lt;/h3&gt;</description>
+<wire x1="-7.62" y1="-5.08" x2="-7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-5.08" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
+<text x="-7.62" y="5.334" size="1.778" layer="95" font="vector">&gt;Name</text>
+<text x="-7.62" y="-5.334" size="1.778" layer="96" font="vector" align="top-left">&gt;Value</text>
+<pin name="EN" x="-10.16" y="-2.54" visible="pin" length="short"/>
+<pin name="GND" x="10.16" y="-2.54" visible="pin" length="short" rot="R180"/>
+<pin name="OUT" x="10.16" y="2.54" visible="pin" length="short" rot="R180"/>
+<pin name="VCC" x="-10.16" y="2.54" visible="pin" length="short"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="OSCILLATOR" prefix="Y">
+<description>&lt;h3&gt;Oscillators (Generic)&lt;/h3&gt;
+&lt;p&gt;These are &lt;b&gt;active&lt;/b&gt; oscillators, which require a power source to generate their clock output. Most oscillators are configured to generate a set frequency (e.g. 16MHz).&lt;/p&gt;
+&lt;p&gt;They have four pins: power, ground, output, and an enable input.&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="OSCILLATOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="SMD-7X5-4PAD" package="OSCILLATOR-SMD-7X5-4PAD">
+<connects>
+<connect gate="G$1" pin="EN" pad="1"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="OUT" pad="3"/>
+<connect gate="G$1" pin="VCC" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD-7X5-6PAD" package="OSCILLATOR-SMD-7.5X5.2-6PIN">
+<connects>
+<connect gate="G$1" pin="EN" pad="1"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="OUT" pad="3"/>
+<connect gate="G$1" pin="VCC" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD-5X3" package="OSCILLATOR-SMD-5X3.2">
+<connects>
+<connect gate="G$1" pin="EN" pad="1"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="OUT" pad="3"/>
+<connect gate="G$1" pin="VCC" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -6889,6 +7161,8 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <part name="C1" library="rcl" deviceset="C-EU" device="C0603K"/>
 <part name="R1" library="rcl" deviceset="R-EU_" device="R0603"/>
 <part name="R2" library="rcl" deviceset="R-EU_" device="R0603"/>
+<part name="Y1" library="SparkFun-Clocks" deviceset="OSCILLATOR" device="SMD-5X3"/>
+<part name="R3" library="rcl" deviceset="R-EU_" device="R0603"/>
 </parts>
 <sheets>
 <sheet>
@@ -6917,6 +7191,8 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <instance part="C1" gate="G$1" x="-53.34" y="40.64"/>
 <instance part="R1" gate="G$1" x="33.02" y="76.2"/>
 <instance part="R2" gate="G$1" x="33.02" y="73.66"/>
+<instance part="Y1" gate="G$1" x="-30.48" y="96.52"/>
+<instance part="R3" gate="G$1" x="12.7" y="60.96"/>
 </instances>
 <busses>
 </busses>
@@ -7148,6 +7424,10 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <wire x1="-53.34" y1="35.56" x2="-53.34" y2="33.02" width="0.1524" layer="91"/>
 <label x="-53.34" y="33.02" size="0.8128" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="Y1" gate="G$1" pin="GND"/>
+<wire x1="-20.32" y1="93.98" x2="-17.78" y2="93.98" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+5V" class="0">
 <segment>
@@ -7239,6 +7519,10 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <pinref part="C1" gate="G$1" pin="1"/>
 <wire x1="-53.34" y1="43.18" x2="-53.34" y2="45.72" width="0.1524" layer="91"/>
 <label x="-53.34" y="45.72" size="0.8128" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="Y1" gate="G$1" pin="VCC"/>
+<wire x1="-40.64" y1="99.06" x2="-43.18" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$63" class="0">
@@ -7395,7 +7679,10 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <net name="N$35" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="(ADC3)PB3"/>
-<wire x1="-12.7" y1="73.66" x2="-10.16" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="Y1" gate="G$1" pin="OUT"/>
+<wire x1="-20.32" y1="99.06" x2="2.54" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="99.06" x2="2.54" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="73.66" x2="-12.7" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LED_D" class="0">
@@ -7424,14 +7711,21 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </net>
 <net name="SW" class="0">
 <segment>
-<pinref part="S1" gate="G$1" pin="1"/>
-<wire x1="20.32" y1="60.96" x2="17.78" y2="60.96" width="0.1524" layer="91"/>
-<label x="17.78" y="60.96" size="0.8128" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <pinref part="U$1" gate="G$1" pin="(ADC1)PB2"/>
 <wire x1="-12.7" y1="71.12" x2="-10.16" y2="71.12" width="0.1524" layer="91"/>
 <label x="-10.16" y="71.12" size="0.8128" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="7.62" y1="60.96" x2="5.08" y2="60.96" width="0.1524" layer="91"/>
+<label x="5.08" y="60.96" size="0.8128" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$36" class="0">
+<segment>
+<pinref part="S1" gate="G$1" pin="1"/>
+<pinref part="R3" gate="G$1" pin="2"/>
+<wire x1="17.78" y1="60.96" x2="20.32" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
