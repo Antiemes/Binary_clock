@@ -7398,12 +7398,6 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <wire x1="-12.7" y1="73.66" x2="-10.16" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$36" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="(ADC1)PB2"/>
-<wire x1="-12.7" y1="71.12" x2="-10.16" y2="71.12" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="LED_D" class="0">
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
@@ -7433,6 +7427,11 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <pinref part="S1" gate="G$1" pin="1"/>
 <wire x1="20.32" y1="60.96" x2="17.78" y2="60.96" width="0.1524" layer="91"/>
 <label x="17.78" y="60.96" size="0.8128" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="(ADC1)PB2"/>
+<wire x1="-12.7" y1="71.12" x2="-10.16" y2="71.12" width="0.1524" layer="91"/>
+<label x="-10.16" y="71.12" size="0.8128" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>

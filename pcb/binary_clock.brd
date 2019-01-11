@@ -2010,9 +2010,6 @@ design rules under a new name.</description>
 <signal name="N$35">
 <contactref element="U$1" pad="2"/>
 </signal>
-<signal name="N$36">
-<contactref element="U$1" pad="7"/>
-</signal>
 <signal name="LED_D">
 <contactref element="R2" pad="1"/>
 <contactref element="U$1" pad="5"/>
@@ -2029,7 +2026,9 @@ design rules under a new name.</description>
 <signal name="SW">
 <contactref element="S1" pad="2"/>
 <contactref element="S1" pad="1"/>
+<contactref element="U$1" pad="7"/>
 <wire x1="11.176" y1="65.405" x2="16.764" y2="65.405" width="0" layer="19" extent="1-1"/>
+<wire x1="20.934" y1="51.435" x2="16.764" y2="65.405" width="0" layer="19" extent="1-16"/>
 </signal>
 </signals>
 </board>
