@@ -7162,6 +7162,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R2" library="rcl" deviceset="R-EU_" device="R1206"/>
 <part name="OSC" library="SparkFun-Clocks" deviceset="OSCILLATOR" device="SMD-5X3"/>
 <part name="R3" library="rcl" deviceset="R-EU_" device="R1206"/>
+<part name="C2" library="rcl" deviceset="C-EU" device="C0603K"/>
+<part name="C3" library="rcl" deviceset="C-EU" device="C0603K"/>
+<part name="C4" library="rcl" deviceset="C-EU" device="C0603K"/>
+<part name="C5" library="rcl" deviceset="C-EU" device="C0603K"/>
 </parts>
 <sheets>
 <sheet>
@@ -7192,6 +7196,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="R2" gate="G$1" x="33.02" y="73.66"/>
 <instance part="OSC" gate="G$1" x="-30.48" y="96.52"/>
 <instance part="R3" gate="G$1" x="12.7" y="60.96"/>
+<instance part="C2" gate="G$1" x="-48.26" y="40.64"/>
+<instance part="C3" gate="G$1" x="-43.18" y="40.64"/>
+<instance part="C4" gate="G$1" x="-38.1" y="40.64"/>
+<instance part="C5" gate="G$1" x="-33.02" y="40.64"/>
 </instances>
 <busses>
 </busses>
@@ -7422,6 +7430,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="C1" gate="G$1" pin="2"/>
 <wire x1="-53.34" y1="35.56" x2="-53.34" y2="33.02" width="0.1524" layer="91"/>
 <label x="-53.34" y="33.02" size="0.8128" layer="95" rot="R180" xref="yes"/>
+<pinref part="C2" gate="G$1" pin="2"/>
+<wire x1="-53.34" y1="35.56" x2="-48.26" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="C3" gate="G$1" pin="2"/>
+<wire x1="-48.26" y1="35.56" x2="-43.18" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="C4" gate="G$1" pin="2"/>
+<wire x1="-43.18" y1="35.56" x2="-38.1" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="C5" gate="G$1" pin="2"/>
+<wire x1="-38.1" y1="35.56" x2="-33.02" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="OSC" gate="G$1" pin="GND"/>
@@ -7519,6 +7535,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="C1" gate="G$1" pin="1"/>
 <wire x1="-53.34" y1="43.18" x2="-53.34" y2="45.72" width="0.1524" layer="91"/>
 <label x="-53.34" y="45.72" size="0.8128" layer="95" rot="R180" xref="yes"/>
+<pinref part="C2" gate="G$1" pin="1"/>
+<wire x1="-53.34" y1="43.18" x2="-48.26" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="C3" gate="G$1" pin="1"/>
+<wire x1="-48.26" y1="43.18" x2="-43.18" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<wire x1="-43.18" y1="43.18" x2="-38.1" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="C5" gate="G$1" pin="1"/>
+<wire x1="-38.1" y1="43.18" x2="-33.02" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="OSC" gate="G$1" pin="VCC"/>
