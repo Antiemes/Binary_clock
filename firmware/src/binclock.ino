@@ -1,5 +1,5 @@
-#define LED_CLK 0
-#define LED_DATA 1
+#define LED_CLK 1
+#define LED_DATA 0
 
 #define LEDS 3
 
@@ -27,12 +27,25 @@ void updateLeds()
 {
   uint8_t i;
   int8_t j;
-
+  for (j=0; j<32; j++)
+  {
+    sendBit(0);
+  }
   for (i=0; i<LEDS; i++)
   {
+    sendBit(1);
+    sendBit(1);
+    sendBit(1);
+    
+    sendBit(1);
+    sendBit(0);
+    sendBit(0);
+    sendBit(0);
+    sendBit(0);
+
     for (j=7; j>=0; j--)
     {
-      sendBit((leds[i].r>>j) & 1);
+      sendBit((leds[i].b>>j) & 1);
     }
     for (j=7; j>=0; j--)
     {
@@ -40,12 +53,16 @@ void updateLeds()
     }
     for (j=7; j>=0; j--)
     {
-      sendBit((leds[i].b>>j) & 1);
+      sendBit((leds[i].r>>j) & 1);
     }
+  }
+  for (j=0; j<32; j++)
+  {
+    sendBit(1);
   }
   digitalWrite(LED_DATA, 0);
   digitalWrite(LED_CLK, 0);
-  delay(100);
+  delay(1);
 }
 
 void setup()
