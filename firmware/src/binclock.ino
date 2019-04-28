@@ -1,6 +1,9 @@
 #define LED_CLK 1
 #define LED_DATA 0
 
+#define BUTTON_PIN 2
+//Pin change interrupt setup also has to be changed, if you change BUTTON_PIN
+
 #define LEDS 17
 
 typedef struct
@@ -65,12 +68,8 @@ void updateLeds()
   delay(1);
 }
 
-volatile uint32_t lastPress=0;
-volatile uint8_t lastButtonState=1;
-volatile uint32_t pressedMicros;
-uint32_t lastPrint=0;
 volatile uint8_t hours=0, minutes=0, secs=0;
-volatile uint8_t ch=0;
+volatile uint8_t trigger=0;
 
 void printTime();
 
@@ -107,24 +106,42 @@ void newColor(uint8_t idx)
 {
   if (!(leds[idx].r | leds[idx].g | leds[idx].b))
   {
-    uint8_t a, b;
+    int8_t a, b, c;
     a=rand() % 3;
-    b=rand() % 10;
+    b=rand() % 20;
+    c=15-b;
+    b=b-5;
+    if (b<0)
+    {
+      b=0;
+    }
+    if (c<0)
+    {
+      c=0;
+    }
+    if (b>10)
+    {
+      b=10;
+    }
+    if (c>10)
+    {
+      c=10;
+    }
     if (a==0)
     {
       leds[idx].r=b;
-      leds[idx].g=10-b;
+      leds[idx].g=c;
       leds[idx].b=0;
     }
     else if (a==1)
     {
       leds[idx].r=0;
       leds[idx].g=b;
-      leds[idx].b=10-b;
+      leds[idx].b=c;
     }
     else
     {
-      leds[idx].r=10-b;
+      leds[idx].r=c;
       leds[idx].g=0;
       leds[idx].b=b;
     }
@@ -184,38 +201,69 @@ void printTime()
   updateLeds();
 }
 
+ISR(PCINT0_vect)
+{
+  static volatile uint32_t lastPress=0;
+  static volatile uint8_t lastButtonState=1;
+  uint8_t buttonState=digitalRead(BUTTON_PIN);
+  uint32_t now=micros();
+  uint32_t pressLength;
+  if (now-lastPress>20000 && lastButtonState!=buttonState)
+  {
+    if (buttonState) //Just released
+    {
+      pressLength=now-lastPress;
+      if (pressLength<200000)
+      {
+        incMinutes();
+        secs=0;
+      }
+      else if (pressLength<1200000)
+      {
+        incHours();
+        secs=0;
+      }
+      else
+      { // Too long press
+      }
+      trigger=1;
+    }
+    lastPress=now;
+    lastButtonState=buttonState;
+  }
+}
+
 void setup()
 {
   pinMode(LED_CLK, OUTPUT);
   pinMode(LED_DATA, OUTPUT);
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
   digitalWrite(LED_DATA, 0);
   digitalWrite(LED_CLK, 0);
-
-//  leds[ 0].r=20; leds[ 0].g= 0; leds[ 0].b= 0;
-//  leds[ 1].r=10; leds[ 1].g=10; leds[ 1].b=10;
-//  leds[ 2].r= 0; leds[ 2].g=20; leds[ 2].b= 0;
-//  leds[ 3].r=20; leds[ 3].g= 0; leds[ 3].b= 0;
-//  leds[ 4].r=10; leds[ 4].g=10; leds[ 4].b=10;
-//
-//  leds[ 5].r= 0; leds[ 5].g=20; leds[ 5].b= 0;
-//  leds[ 6].r=20; leds[ 6].g= 0; leds[ 6].b= 0;
-//  leds[ 7].r=10; leds[ 7].g=10; leds[ 7].b=10;
-//  leds[ 8].r= 0; leds[ 8].g=20; leds[ 8].b= 0;
-//  leds[ 9].r=20; leds[ 9].g= 0; leds[ 9].b= 0;
-//  leds[10].r=10; leds[10].g=10; leds[10].b=10;
-//
-//  leds[11].r= 0; leds[11].g=20; leds[11].b= 0;
-//  leds[12].r=20; leds[12].g= 0; leds[12].b= 0;
-//  leds[13].r=10; leds[13].g=10; leds[13].b=10;
-//  leds[14].r= 0; leds[14].g=20; leds[14].b= 0;
-//  leds[15].r=20; leds[15].g= 0; leds[15].b= 0;
-//  leds[16].r=10; leds[16].g=10; leds[16].b=10;
   delay(10);
+
+  GIMSK = 0b00100000;    // turns on pin change interrupts
+  PCMSK = 0b00000100;    // turn on interrupts on pins PB2
+  sei();                 // enables interrupts
 }
+
+uint8_t count=0;
 
 void loop()
 {
-  printTime();
-  delay(1000);
-  incSecs();
+  if (count==0)
+  {
+    incSecs();
+    trigger=1;
+    count=20;
+  }
+  count--;
+  if (trigger)
+  {
+    printTime();
+    trigger=0;
+  }
+  uint32_t now=millis();
+  delay(50-now % 50);
+  delay(1);
 }
