@@ -4,6 +4,8 @@
 //USB: 8x3
 //Battery: 21x32x7
 
+$fn=36;
+
 batt_x=21;
 batt_y=32;
 batt_z=7;
@@ -18,6 +20,8 @@ over2=2; // Ennyivel lesz szelesebb a doboz, mint a NYAK
 base_x=(pcb_x+over2*2); //Doboz szelessege
 base_y=50;
 encl_thick=2; //Doboz anyaganak vastagsaga
+
+usb_x=-11; //USB tolto x offset
 
 module battery()
 {
@@ -34,7 +38,7 @@ module pcb()
 
 module usb()
 {
-  translate([-15, base_y-encl_thick-1, encl_thick+1.2]) cube([8, encl_thick+2, 3]);
+  translate([usb_x-4, base_y-encl_thick-1, encl_thick+1.2]) cube([8, encl_thick+2, 3]);
 }
 
 //pcb();
@@ -45,6 +49,7 @@ difference()
   translate([-base_x/2+encl_thick, encl_thick-20, encl_thick]) cube([base_x-encl_thick*2, base_y-encl_thick*2+20, pcb_y]);
   usb();
 }
+
 difference()
 {
   translate([0, (over2*2+pcb_z)/2, encl_thick+pcb_y/2]) cube([base_x, over2*2+pcb_z, pcb_y], center=true);
@@ -52,4 +57,17 @@ difference()
   pcb();
 }
 
+module foo()
+{
+  cylinder(d=1.6, h=h, center=false);
+}
+
 translate([10, 30, 6]) battery();
+translate([usb_x, base_y-1.8-encl_thick, encl_thick])
+{
+  translate([13.5/2, 0, 0]) foo();
+  translate([-13.5/2, 0, 0]) foo();
+  translate([13.5/2, -18, 0]) foo();
+  translate([-13.5/2, -18, 0]) foo();
+
+}
