@@ -59,10 +59,10 @@ difference()
 
 module foo()
 {
-  cylinder(d=1.6, h=h, center=false);
+  cylinder(d=1.6, h=2, center=false);
 }
 
-translate([10, 30, 6]) battery();
+//translate([10, 30, 6]) battery();
 translate([usb_x, base_y-1.8-encl_thick, encl_thick])
 {
   translate([13.5/2, 0, 0]) foo();
